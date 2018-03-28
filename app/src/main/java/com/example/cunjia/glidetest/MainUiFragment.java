@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,16 +63,20 @@ public class MainUiFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        String uriStr = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522237327652&di=6e2742af599ab80ea36250137cf68a4f&imgtype=jpg&src=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D806514227%2C2446044831%26fm%3D214%26gp%3D0.jpg";
+        Log.d("zjl","start0");
         View view = inflater.inflate(R.layout.fragment_main_ui,container,false);
+        Log.d("zjl","start1");
         iv = (ImageView) view.findViewById(R.id.iv);
-        Glide.with(this).load("http://www.1793food.com/style/images/logo.png").into(iv);
+        Log.d("zjl","start2");
+        Glide.with(this).load(uriStr).into(iv);
+        Log.d("zjl","start3");
         return inflater.inflate(R.layout.fragment_main_ui, container, false);
     }
     /*
